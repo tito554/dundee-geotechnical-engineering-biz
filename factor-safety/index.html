@@ -116,6 +116,42 @@ header.hero, .hero { position: relative !important; }
 .leaflet-control { z-index: 800 !important; }
 .leaflet-container { z-index: 1 !important; }
 </style>
+<style id="inline-link-style">
+p a[href^="/"]:not(.cta-btn):not(.hero-cta){color:var(--accent,#2E8B57) !important;text-decoration:underline !important;text-decoration-color:rgba(29,78,216,.45);text-underline-offset:2px;font-weight:600}
+p a[href^="/"]:not(.cta-btn):not(.hero-cta):hover{text-decoration-color:currentColor;opacity:.85}
+</style>
+<style id="navbar-compact-fix">
+/* Compactar navbar para que el menú entre completo */
+.navbar{padding:.65rem 1rem !important}
+.navbar .nav{gap:.55rem !important}
+.nav-item{font-size:.74rem !important;letter-spacing:.01em !important}
+.nav-item.has-dd .nav-cat-link{padding:.4rem .25rem !important}
+.nav-item.has-dd .nav-arrow{font-size:.7rem !important;margin-left:.15rem !important}
+.cta-btn{padding:.45rem .8rem !important;font-size:.72rem !important;letter-spacing:.03em !important}
+.logo-box,.brand-name,.brand{font-size:.82rem !important}
+.logo-text .main{font-size:.95rem !important}
+.logo-text .sub{font-size:.72rem !important}
+/* Para layouts aberdeen/classic con clase distinta */
+header nav a,.menu a{font-size:.78rem !important}
+@media (max-width:1100px){
+  .nav-item{font-size:.7rem !important}
+  .navbar .nav{gap:.4rem !important}
+  .cta-btn{padding:.4rem .65rem !important;font-size:.68rem !important}
+}
+</style>
+<style id="layout-defensive">
+html,body{overflow-x:hidden;max-width:100vw}
+body>*{max-width:100vw}
+@media (min-width:901px){
+  aside{position:relative}
+  aside+main,aside~main,aside~div>main{margin-left:0}
+  .content-area{display:flex;gap:1rem}
+}
+@media (max-width:900px){
+  aside{width:100% !important;position:static !important;height:auto !important}
+  .navbar{flex-wrap:wrap}
+}
+</style>
 </head><body>
 
 <header class="header">
@@ -144,7 +180,7 @@ header.hero, .hero { position: relative !important; }
 
         <h2>Process overview</h2><div>Eurocode 7 (BS EN 1997-1:2004) sets the framework for all our factor of safety calculations in Dundee. The code demands that we use distinct partial factors for actions, materials and resistances — not a single lumped safety factor. This matters especially in Dundee because the city sits on a complex mix of Devonian sandstone, glacial deposits and recent river silts. Each material requires a different set of partial factors. We follow BS 5930 for ground investigation procedures and apply the NCEER (Youd-Idriss, 2001) method when assessing liquefaction potential in loose sands. A proper <a href="../direct-shear/">corte directo</a> test on undisturbed samples gives us the drained shear strength parameters needed for long-term stability. The table below summarises typical parameters we use in Dundee projects.</div>
         <figure style="margin:1.5rem auto;max-width:60%;border-radius:6px;overflow:hidden;border:1px solid #E5E5E5"></figure>
-        <h2>Local context</h2><p>We use a portable cone penetration rig for most of our factor of safety work in Dundee, especially on tight residential sites near Magdalen Green or the Perth Road. The rig weighs about 2.5 tonnes and pushes a 10 cm² cone at 20 mm/s. It gives continuous profiles of tip resistance and sleeve friction. That direct data feeds into the undrained shear strength for short-term stability calculations. Without it, you rely on empirical correlations that can mislead you in layered soils. In our experience, the biggest risk in Dundee is underestimating pore pressures in the soft clays during excavation — a good factor of safety calculation catches that early.</p>
+        <h2>Local context</h2><p>We use a portable <a href="/cone-penetration/">cone penetration</a> rig for most of our factor of safety work in Dundee, especially on tight residential sites near Magdalen Green or the Perth Road. The rig weighs about 2.5 tonnes and pushes a 10 cm² cone at 20 mm/s. It gives continuous profiles of tip resistance and sleeve friction. That direct data feeds into the undrained shear strength for short-term stability calculations. Without it, you rely on empirical correlations that can mislead you in layered soils. In our experience, the biggest risk in Dundee is underestimating pore pressures in the soft clays during excavation — a good factor of safety calculation catches that early.</p>
 
         
     <section class="block mid-cta-c014-c014" style="padding:2rem 0">

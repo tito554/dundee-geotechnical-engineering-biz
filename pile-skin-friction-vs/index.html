@@ -116,6 +116,42 @@ header.hero, .hero { position: relative !important; }
 .leaflet-control { z-index: 800 !important; }
 .leaflet-container { z-index: 1 !important; }
 </style>
+<style id="inline-link-style">
+p a[href^="/"]:not(.cta-btn):not(.hero-cta){color:var(--accent,#2E8B57) !important;text-decoration:underline !important;text-decoration-color:rgba(29,78,216,.45);text-underline-offset:2px;font-weight:600}
+p a[href^="/"]:not(.cta-btn):not(.hero-cta):hover{text-decoration-color:currentColor;opacity:.85}
+</style>
+<style id="navbar-compact-fix">
+/* Compactar navbar para que el menú entre completo */
+.navbar{padding:.65rem 1rem !important}
+.navbar .nav{gap:.55rem !important}
+.nav-item{font-size:.74rem !important;letter-spacing:.01em !important}
+.nav-item.has-dd .nav-cat-link{padding:.4rem .25rem !important}
+.nav-item.has-dd .nav-arrow{font-size:.7rem !important;margin-left:.15rem !important}
+.cta-btn{padding:.45rem .8rem !important;font-size:.72rem !important;letter-spacing:.03em !important}
+.logo-box,.brand-name,.brand{font-size:.82rem !important}
+.logo-text .main{font-size:.95rem !important}
+.logo-text .sub{font-size:.72rem !important}
+/* Para layouts aberdeen/classic con clase distinta */
+header nav a,.menu a{font-size:.78rem !important}
+@media (max-width:1100px){
+  .nav-item{font-size:.7rem !important}
+  .navbar .nav{gap:.4rem !important}
+  .cta-btn{padding:.4rem .65rem !important;font-size:.68rem !important}
+}
+</style>
+<style id="layout-defensive">
+html,body{overflow-x:hidden;max-width:100vw}
+body>*{max-width:100vw}
+@media (min-width:901px){
+  aside{position:relative}
+  aside+main,aside~main,aside~div>main{margin-left:0}
+  .content-area{display:flex;gap:1rem}
+}
+@media (max-width:900px){
+  aside{width:100% !important;position:static !important;height:auto !important}
+  .navbar{flex-wrap:wrap}
+}
+</style>
 </head><body>
 
 <header class="header">
@@ -194,7 +230,7 @@ header.hero, .hero { position: relative !important; }
 
         <h2>Quick answers</h2>
 <hr style="border:none;height:2px;background:linear-gradient(90deg,transparent,#A16207,transparent);margin:2rem 0;width:60%;margin-left:auto;margin-right:auto">
-<details class="faq"><summary>What is the typical cost range for a pile skin friction vs. end bearing analysis in Dundee?</summary><p>For a standard project in Dundee, the cost typically falls between £880 and £2,540 depending on pile type, number of test piles, and instrumentation depth. This includes field testing, laboratory triaxial and interface shear tests, and a full design report with ULS/SLS checks. Larger developments with multiple pile groups may be quoted at the lower end per pile.</p></details><details class="faq"><summary>How does Dundee's glacial till affect the skin friction component compared to end bearing?</summary><p>Dundee's glacial till has a high cobble and gravel content that creates a rough pile-soil interface, giving shaft friction values of 80–160 kPa in driven piles. However, the presence of boulders can cause local refusal during driving, reducing end bearing mobilisation to only 30–50% of calculated toe capacity. In bored piles, the smear zone from augering can cut skin friction by half, so end bearing becomes dominant.</p></details><details class="faq"><summary>Which Eurocode 7 design approach is most appropriate for piles in Dundee?</summary><p>We recommend Design Approach 2 (DA2) from BS EN 1997-1:2004 for Dundee sites, as it applies separate partial factors to actions and resistances. The glacial till's stiffness requires a high Model Factor (γ_R,d = 1.4) when using empirical methods like the alpha or beta method. For serviceability, the settlement criterion should be set at 10 mm under working load based on local load test records.</p></details>
+<details class="faq"><summary>What is the typical cost range for a pile skin friction vs. end bearing analysis in Dundee?</summary><p>For a standard project in Dundee, the cost typically falls between £880 and £2,540 depending on pile type, number of test piles, and instrumentation depth. This includes field testing, <a href="/laboratory/">laboratory</a> triaxial and interface shear tests, and a full design report with ULS/SLS checks. Larger developments with multiple pile groups may be quoted at the lower end per pile.</p></details><details class="faq"><summary>How does Dundee's glacial till affect the skin friction component compared to end bearing?</summary><p>Dundee's glacial till has a high cobble and gravel content that creates a rough pile-soil interface, giving shaft friction values of 80–160 kPa in driven piles. However, the presence of boulders can cause local refusal during driving, reducing end bearing mobilisation to only 30–50% of calculated toe capacity. In bored piles, the smear zone from augering can cut skin friction by half, so end bearing becomes dominant.</p></details><details class="faq"><summary>Which Eurocode 7 design approach is most appropriate for piles in Dundee?</summary><p>We recommend Design Approach 2 (DA2) from BS EN 1997-1:2004 for Dundee sites, as it applies separate partial factors to actions and resistances. The glacial till's stiffness requires a high Model Factor (γ_R,d = 1.4) when using empirical methods like the alpha or beta method. For serviceability, the settlement criterion should be set at 10 mm under working load based on local load test records.</p></details>
     
     <section class="block map-block" style="padding:3rem 1.5rem">
       <div style="max-width:1200px;margin:0 auto">
