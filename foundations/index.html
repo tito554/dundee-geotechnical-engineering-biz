@@ -138,7 +138,7 @@ header nav a,.menu a{font-size:.78rem !important}
 }
 </style>
 <style id="layout-defensive">
-html,body{overflow-x:hidden;max-width:100vw}
+body{overflow-x:clip;max-width:100vw}
 body>*{max-width:100vw}
 @media (min-width:901px){
   aside{position:relative}
@@ -149,6 +149,62 @@ body>*{max-width:100vw}
   aside{width:100% !important;position:static !important;height:auto !important}
   .navbar{flex-wrap:wrap}
 }
+</style>
+<style id="navbar-fixed-override">
+nav.navbar,.header-top,.main-header{position:fixed !important;top:0 !important;left:0 !important;right:0 !important;z-index:1010 !important}
+body{padding-top:60px}
+.hero,.hero-inner,header.hero{padding-top:1rem !important}
+@media (max-width:900px){body{padding-top:90px}}
+</style>
+<style id="sidebar-hover-fix-v2">
+/* Adaptativo: hover preserva color heredado (white en dark sidebar, dark en light) */
+aside .cat-name:hover,aside .sb-home:hover,aside .cat-sub-wrap a:hover,
+aside nav a:hover{color:inherit !important;text-decoration:underline !important;text-underline-offset:3px}
+aside .cat-name,aside .sb-home,aside nav a{color:inherit}
+/* Bg sutil que funciona en cualquier fondo */
+aside .cat-name:hover,aside .sb-home:hover{background:rgba(127,127,127,.12) !important}
+aside .cat-sub-wrap a:hover{background:rgba(127,127,127,.08) !important}
+</style>
+<style id="cat-toggle-no-box">
+.cat-toggle{width:auto !important;min-width:32px;border:none !important;border-left:none !important;background:transparent !important;box-shadow:none !important;padding:.3rem .5rem !important}
+.cat-toggle:hover{background:rgba(127,127,127,.12) !important}
+.cat-arrow{display:inline-block}
+</style>
+<style id="nav-arrow-no-box">
+.nav-arrow,.nav-arrow:hover,.nav-arrow:focus{background:transparent !important;border:none !important;outline:none !important;padding:0 .15rem !important;color:inherit !important;cursor:pointer !important;box-shadow:none !important}
+</style>
+<style id="post-fixes-v2">
+/* Inline links visibles en prosa */
+p a[href^="/"]:not(.cta-btn):not(.hero-cta):not(.nav-contact-btn){color:var(--accent,#1d4ed8) !important;text-decoration:underline !important;text-decoration-color:rgba(29,78,216,.45);text-underline-offset:2px;font-weight:600}
+p a[href^="/"]:not(.cta-btn):not(.hero-cta):not(.nav-contact-btn):hover{text-decoration-color:currentColor;opacity:.85}
+/* Sidebar hover adaptive */
+aside .cat-name:hover,aside .sb-home:hover,aside .cat-sub-wrap a:hover,
+aside nav a:hover{color:inherit !important;text-decoration:underline !important;text-underline-offset:3px}
+aside .cat-name,aside .sb-home,aside nav a{color:inherit}
+aside .cat-name:hover,aside .sb-home:hover{background:rgba(127,127,127,.12) !important}
+/* Cat-toggle sin caja */
+.cat-toggle{width:auto !important;min-width:32px;border:none !important;border-left:none !important;background:transparent !important;box-shadow:none !important;padding:.3rem .5rem !important}
+.cat-toggle:hover{background:rgba(127,127,127,.12) !important}
+/* Nav-arrow sin caja */
+.nav-arrow,.nav-arrow:hover,.nav-arrow:focus{background:transparent !important;border:none !important;outline:none !important;padding:0 .15rem !important;color:inherit !important;cursor:pointer !important;box-shadow:none !important}
+/* Navbar compacto */
+.navbar{padding:.65rem 1rem !important}
+.navbar .nav{gap:.55rem !important}
+.nav-item{font-size:.74rem !important;letter-spacing:.01em !important}
+.logo-box,.brand-name,.brand{font-size:.82rem !important}
+/* Layout defensive */
+body{overflow-x:clip;max-width:100vw}
+body>*{max-width:100vw}
+</style>
+<style id="nav-fix-v3">
+nav.navbar, header nav, .nav-bar, .top-nav { font-size: 1rem !important; }
+nav.navbar a, header nav a, .nav-bar a, .top-nav a, .nav-cat-link, .nav-item a { font-size: 1rem !important; color: #FFFFFF !important; font-weight: 500 !important; }
+nav.navbar a:hover, header nav a:hover, .nav-cat-link:hover { color: #FCD34D !important; text-decoration: underline; }
+nav[aria-label="breadcrumb"], .crumb, .breadcrumb { color: rgba(255,255,255,.85) !important; font-size: .82rem !important; }
+nav[aria-label="breadcrumb"] a, .crumb a, .breadcrumb a { color: #FFFFFF !important; text-decoration: underline; font-weight: 600; }
+nav[aria-label="breadcrumb"] a:hover, .crumb a:hover { color: #FCD34D !important; }
+.crumb a[href="/"], .breadcrumb a[href="/"], a.home-link { color: #FFFFFF !important; }
+.brand-name, .logo-text, .main, .brand { color: #FFFFFF !important; }
 </style>
 </head><body>
 
@@ -181,10 +237,12 @@ body>*{max-width:100vw}
     </section>
 <section class="block" style="padding:2rem 1.5rem"><div style="max-width:1200px;margin:0 auto">
 
+
+<img src="/img/pilotes-friccion-punta-1.webp" alt="Foundations in Dundee" loading="lazy" decoding="async" style="width:100%;max-height:220px;object-fit:cover;display:block;border-radius:6px;margin:1.5rem 0">
 <p>Ground conditions in Dundee demand a foundation approach rooted in a clear understanding of the underlying geology and strict adherence to UK best practice. The city sits predominantly on a complex sequence of Devonian Old Red Sandstone, extensively intruded by Permo-Carboniferous dolerite sills, such as the prominent Dundee Law, with overlying glacial tills and post-glacial raised beach deposits near the Tay Estuary. This variable profile means a desktop study alone is insufficient; physical investigation is the essential first step for any structural foundation. Our services begin with targeted <a href="/investigation/">ground investigation</a>, often commencing with an <a href="/exploratory-pit/">exploratory test pit</a> to visually assess near-surface made ground and natural drift, directly informing the scope of subsequent intrusive testing.</p>
 <p>A rigorous foundation design is built on quantitative data acquired to British Standards, principally BS 5930 and Eurocode 7 via BS EN 1997-2, ensuring compliance with both technical requirements and NHBC Standards for residential schemes. For most projects in Dundee, we deploy a combination of in-situ techniques to capture the full geotechnical profile. The <a href="/standard-penetration/">Standard Penetration Test (SPT)</a> is fundamental for correlating soil density and strength in granular tills, while the <a href="/cone-penetration/">Cone Penetration Test (CPT)</a> provides a near-continuous profile of undrained shear strength and stratigraphy, which is particularly valuable for profiling soft alluvial clays along the waterfront. Where the dolerite bedrock is shallow, its strength and fracture state are critical, and we supplement these methods with specialist <a href="/in-situ-testing/">In-Situ</a> such as the <a href="/menard-pressuremeter/">Ménard pressuremeter test (PMT)</a> to derive high-quality stiffness and strength parameters directly, minimizing conservatism in the design of deep or heavily loaded foundations.</p>
 <p>The selection of an appropriate foundation solution in Dundee is a direct response to this ground variability. Typical projects range from traditional strip and trench fill foundations on competent glacial till for residential developments on the city’s slopes, to heavily reinforced pad or piled foundations for commercial structures where variable drift thickness or mining legacy issues prevail. The characterisation of weathered dolerite is a common challenge, and our in-house <a href="/laboratory/">laboratory</a> testing, including point load index tests and slake durability assessments, is critical for determining safe bearing pressures and pile socket lengths. For projects on the region’s less common but locally significant residual soils, a specific <a href="/residual-soil-characterization/">residual soil characterization</a> programme is often necessary to predict settlement and stiffness behaviour accurately, ensuring the chosen foundation system performs reliably throughout its design life.</p>
-<img src="/img/pilotes-hincados-1.webp" alt="Foundations in Dundee" loading="lazy" decoding="async" style="width:100%;max-height:220px;object-fit:cover;display:block;border-radius:6px;margin:1.5rem 0">
+<img src="/img/cimentaciones-superficiales-1.webp" alt="Foundations in Dundee" loading="lazy" decoding="async" style="width:100%;max-height:220px;object-fit:cover;display:block;border-radius:6px;margin:1.5rem 0">
 
 <p>Our process delivers a definitive foundation recommendation, not just a data report. We integrate the field data from SPT, CPT, and pressuremeter testing with targeted laboratory analysis to produce a clear, actionable interpretive report that defines bearing capacity, anticipated settlement, and any necessary Improvement or reinforcement. This comprehensive package, conforming to the requirements of local building control and SER certifiers, provides architects, structural engineers, and contractors in Dundee with the certainty needed to proceed with safe, cost-optimised foundation construction, effectively de-risking the ground-related elements of the project from the outset.</p></div></section></main>
 </div>
@@ -200,7 +258,7 @@ body>*{max-width:100vw}
     if(!el)return;
     var map=L.map(el).setView([56.4605938,-2.97019],12);
     L.tileLayer('https://{s}.tile-c014.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap',maxZoom:18}).addTo(map);
-    L.marker([56.4605938,-2.97019],{icon:L.icon({iconUrl:'/css/images/marker-icon.png',iconRetinaUrl:'/css/images/marker-icon-2x.png',shadowUrl:'/css/images/marker-shadow.png',iconSize:[25,41],iconAnchor:[12,41],popupAnchor:[1,-34],shadowSize:[41,41]})}).addTo(map).bindPopup("Dundee").openPopup();
+    L.marker([56.4605938,-2.97019],{icon:L.divIcon({html:'<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 36\" width=\"24\" height=\"36\"><path d=\"M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24c0-6.6-5.4-12-12-12z\" fill=\"#E11D48\" stroke=\"#FFF\" stroke-width=\"1.5\"/><circle cx=\"12\" cy=\"12\" r=\"4\" fill=\"#FFF\"/></svg>',className:'',iconSize:[24,36],iconAnchor:[12,36],popupAnchor:[0,-32]})}).addTo(map).bindPopup("Dundee").openPopup();
   }
   if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}else{init();}
 })();
